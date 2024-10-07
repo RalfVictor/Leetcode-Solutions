@@ -21,10 +21,13 @@ public:
                 return false;
             }
             if(count(sen.begin(),sen.end(),sub[i])>0){
-                sen.erase(sen.begin(),x);
-                cout<<*x;
-                it = (x+1);
+                sen.erase(sen.begin(),(x+1));
+                it = sen.begin();
             }
+            for(auto j=sen.begin();j<sen.end();j++){
+                cout<<*j;
+            }
+            cout<<endl;
         }return true;
     }
 };
