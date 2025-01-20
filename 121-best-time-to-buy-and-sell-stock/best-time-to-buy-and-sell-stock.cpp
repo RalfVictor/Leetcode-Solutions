@@ -6,8 +6,7 @@ public:
         int price = 0;
         for(int i=0;i<prices.size();i++){
             mini = min(mini,prices[i]);
-            int comp = prices[i]-mini;
-            price = max(price,comp);
+            price = max(price,prices[i]-mini);
             } return price;
         }
 };
