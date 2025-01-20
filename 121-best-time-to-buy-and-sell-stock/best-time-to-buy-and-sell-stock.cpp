@@ -7,7 +7,6 @@ public:
         for(int i=0;i<prices.size();i++){
             mini = min(mini,prices[i]);
             int comp = prices[i]-mini;
-            cout<<comp<<endl;
             price = max(price,comp);
             } return price;
         }
