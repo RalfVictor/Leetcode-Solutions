@@ -1,6 +1,7 @@
 class Solution {
 public:
     void dfs(int node,vector<vector<int>>& adj,vector<int>& vis){
+        if(vis[node]) return;
         vis[node] = 1;
         for(auto i:adj[node]){
             if(!vis[i]){
