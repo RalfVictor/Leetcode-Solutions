@@ -42,7 +42,6 @@ public:
                 }
             }
         }
-        cout<<count<<" "<<ncount;
         if(ncount!=count){
             return -1;
         }
