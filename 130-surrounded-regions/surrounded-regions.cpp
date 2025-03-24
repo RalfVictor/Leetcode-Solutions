@@ -35,7 +35,7 @@ public:
                 int nr = r+row[i];
                 int nc = c+col[i]; 
                 if(nr<n && nc<m && nr>=0 && nc>=0 && board[nr][nc]=='O' && vis[nr][nc]=='X'){
-                    vis[nr][nc] = 'O';cout<<board[1][1]<<" "<<vis[1][1]<<endl;
+                    vis[nr][nc] = 'O';
                     q.push({nr,nc});
                 }
             }
