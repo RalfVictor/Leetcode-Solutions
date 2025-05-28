@@ -7,7 +7,6 @@ public:
         int j=0;
         int count=0; 
         while(i<g.size() && j<s.size()){
-            cout<<s[j]<<" "<<g[i]<<endl;
             if(s[j]>=g[i]){
                 count++;
                 i++;
