@@ -14,7 +14,6 @@ public:
             else {dp[i][j] = max(dp[i-1][j],dp[i][j-1]);}
             }
         }
-        dp[n][m];
 		string s = "";
 		int i = n;
 		int j = m;
