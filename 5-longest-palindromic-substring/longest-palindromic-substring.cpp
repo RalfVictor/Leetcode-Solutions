@@ -10,7 +10,6 @@ public:
             while(l>=0 && r<n && s[l]==s[r]){
                 if(r-l+1>len){
                     len = r-l+1;
-                    cout<<len<<endl;
                     ans = s.substr(l,len);
                 }
             l--;
