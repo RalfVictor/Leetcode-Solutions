@@ -13,12 +13,10 @@ public:
                 continue;
             }
             if(nums[i]==nums[i-1]+1){
-                cout<<nums[i]<<" "<<nums[i-1]<<endl;
                 temp++;
                 i++;
             }
             else{
-                cout<<nums[i]<<"-"<<nums[i-1]<<endl;
                 ans = max(ans,temp);
                 temp = 1;
                 i++;
