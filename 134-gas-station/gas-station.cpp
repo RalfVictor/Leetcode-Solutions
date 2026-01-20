@@ -7,7 +7,6 @@ public:
         int start = 0;
         
         for(int i = 0; i < n; i++){
-            cout<<i<<endl;
             total_surplus += gas[i] - cost[i];
             surplus += gas[i] - cost[i];
             if(surplus < 0){
