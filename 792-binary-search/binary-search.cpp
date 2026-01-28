@@ -6,7 +6,6 @@ public:
         int j = n-1;
         int mid = (i+j)/2;
         while(i<=j){
-            cout<<i<<"+"<<j<<" "<<nums[mid]<<endl;
             if(nums[mid]==target){
                 return mid;
             }
