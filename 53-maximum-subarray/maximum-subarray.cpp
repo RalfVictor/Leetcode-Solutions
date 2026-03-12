@@ -11,9 +11,6 @@ public:
             if(sum<0){
                 sum = 0;
             }
-            else{
-                maxi = max(maxi,sum);
-            }
         }
         return maxi;
     }
