@@ -19,7 +19,6 @@ public:
                 temp = nums[i];
                 maxi = 1;
             }
-            cout<<maxi<<endl;
         }
         ans = max(maxi,ans);
         return ans;
