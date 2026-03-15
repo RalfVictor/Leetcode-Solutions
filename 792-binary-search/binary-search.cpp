@@ -4,18 +4,15 @@ public:
         int n = nums.size();
         int i = 0;
         int j = n-1;
-        int mid = (i+j)/2;
         while(i<=j){
-            if(nums[mid]==target){
-                return mid;
+            int mid = i+(j-i)/2;
+            if(nums[mid]==target) return mid;
+            if(nums[mid]>target){
+                j = mid-1;
             }
             if(nums[mid]<target){
                 i = mid+1;
             }
-            else{
-                j = mid-1;
-            }
-            mid = (i+j)/2;
         }
         return -1;
     }
