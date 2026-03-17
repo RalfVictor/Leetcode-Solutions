@@ -11,29 +11,19 @@
  */
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
-        int ans = 0;
-        if(root==NULL) return ans;
-        queue<TreeNode*> q;
-        q.push(root);
-        q.push(NULL);
-        while(!q.empty()){
-            TreeNode* temp = q.front();
-            q.pop();
-            if(temp==NULL){
-                ans++;
-                if(!q.empty()){
-                    q.push(NULL);
-                }
-            }else{
-                if(temp->left){
-                    q.push(temp->left);
-                }
-                if(temp->right){
-                    q.push(temp->right);
-                }
-            }
+    void bfs(TreeNode* root,int& maxi,int h){
+        if(!root){
+            maxi = max(maxi,h-1);
+            return;
         }
-        return ans;
+        bfs(root->left,maxi,h+1);
+        bfs(root->right,maxi,h+1);
+        return;
+    }
+    int maxDepth(TreeNode* root) {
+        if(!root) return 0;
+        int maxi = 0;
+        bfs(root,maxi,1);
+        return maxi;
     }
 };
