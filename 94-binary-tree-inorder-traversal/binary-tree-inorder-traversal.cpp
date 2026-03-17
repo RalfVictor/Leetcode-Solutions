@@ -10,21 +10,16 @@
  * };
  */
 class Solution {
-
-vector<int> ans;
-    void in(TreeNode* root){
-        if(root==NULL){
-            return;
-        }
-        in(root->left);
-        ans.push_back(root->val);
-        in(root->right);
-    }
-
 public:
+    void ino(vector<int>& ans,TreeNode* root){
+        if(!root) return;
+        ino(ans,root->left);
+        ans.push_back(root->val);
+        ino(ans,root->right);
+    }
     vector<int> inorderTraversal(TreeNode* root) {
-        ans.clear();
-        in(root);
+        vector<int> ans;
+        ino(ans,root);
         return ans;
     }
 };
