@@ -1,23 +1,25 @@
 class Solution {
 public:
-    int f(vector<int>& coins,int am,int ind,vector<vector<int>>& dp){
-        if(ind==0){
-            if(am%coins[ind]==0) return am/coins[ind];
-            else return 1e9;
+    int loop(vector<int>& coins, int am, vector<vector<int>>& dp,int i){
+        if(i==0){
+            if(am%coins[i]==0){
+                return dp[i][am] = am/coins[i];
+            }
+            return dp[i][am] = 1e9;
         }
-        if(dp[ind][am]!=-1) return dp[ind][am];
-        int nottake = 0+f(coins,am,ind-1,dp);
-        int take = 1e9;
-        if(am>=coins[ind]){
-            take = 1+f(coins,am-coins[ind],ind,dp);
+        if(dp[i][am]!=-1) return dp[i][am];
+        int notp = loop(coins,am,dp,i-1);
+        int p = INT_MAX;
+        if(am>=coins[i]){
+            p = 1+loop(coins,am-coins[i],dp,i);
         }
-        return dp[ind][am] = min(take,nottake);
+        return dp[i][am] = min(notp,p);
     }
-    int coinChange(vector<int>& coins, int amount) {
+    int coinChange(vector<int>& coins, int am) {
         int n = coins.size();
-        vector<vector<int>> dp(n,vector<int>(amount+1,-1));
-        int x = f(coins,amount,n-1,dp);
-        if(x==1e9) return -1;
-        return x;
+        vector<vector<int>> dp(n,vector<int>(am+1,-1));
+        int ans = loop(coins,am,dp,n-1);
+        if(ans==1e9) return -1;
+        return ans;
     }
 };
