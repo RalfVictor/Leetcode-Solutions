@@ -7,9 +7,10 @@ public:
         int maxi = 0;
         for(int i=0;i<n-1;i++){
             if(i>maxi) return false;
-            maxi = max(maxi,i+nums[i]);
-            if(maxi>=n-1) return true;
+            maxi = max(maxi,nums[i]+i);
+            cout<<maxi<<endl;
         }
-        return false;
+        if(maxi<n-1) return false;
+        return true;
     }
 };
