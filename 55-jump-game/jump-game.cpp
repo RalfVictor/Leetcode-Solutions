@@ -8,7 +8,6 @@ public:
         for(int i=0;i<n-1;i++){
             if(i>maxi) return false;
             maxi = max(maxi,nums[i]+i);
-            cout<<maxi<<endl;
         }
         if(maxi<n-1) return false;
         return true;
