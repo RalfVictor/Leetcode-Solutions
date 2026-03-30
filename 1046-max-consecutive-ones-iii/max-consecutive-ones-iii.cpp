@@ -12,9 +12,7 @@ public:
                     if(nums[i]==0) c--;
                     i++;
                 }
-                if(c<=k){
-                    ans = max(ans,j-i+1);
-                }
+                ans = max(ans,j-i+1);
                 j++;
             }
         
